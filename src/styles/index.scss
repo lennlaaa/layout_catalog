@@ -2,7 +2,7 @@
 
 :root {
   --blue: #00acdc;
-  --black: #000;
+  --black: #060b35;
 }
 
 body {
@@ -49,7 +49,7 @@ body {
 }
 
 .nav_link:hover {
-  color: var(--blue);
+  color: #00acdc;
 }
 
 .is-active::after {
@@ -70,6 +70,8 @@ body {
 
 
 
+
+
 @import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
 
 body {
@@ -82,6 +84,10 @@ body * {
   font-family: Roboto, sans-serif;
 }
 
+.catalog {
+  margin: 50px 40px 50px 40px;
+
+
 .card {
   display: flex;
   flex-direction: column;
@@ -90,6 +96,12 @@ body * {
   border-radius: 5px;
   padding: 32px 16px;
   width: 200px;
+  transition: transform 300ms;
+  
+  .card:hover {
+    transform: scale(20%);
+  }
+
   &__images {
     width: 160px;
     height: 134px;
@@ -102,6 +114,10 @@ body * {
     line-height: 18px;
     color: #060b35;
   }
+  .card__title:hover {
+    color: #34568b;
+  }
+
   &__code {
     margin-top: 0;
     align-self: flex-start;
@@ -182,5 +198,33 @@ body * {
       color: #00acdc;
       background-color: #fff;
     }
+  }
+}
+}
+
+@media screen and (min-width: 488px) {
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    column-gap: 46px;
+    row-gap: 48px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    column-gap: 46px;
+    row-gap: 48px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    column-gap: 46px;
+    row-gap: 48px;
   }
 }
