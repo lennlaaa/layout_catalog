@@ -7,7 +7,12 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+body * {
+  box-sizing: border-box;
 }
 
 .header {
@@ -25,18 +30,18 @@ body {
   display: block;
 }
 
-.nav_list {
+.nav__list {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.nav_item + .nav_item {
+.nav__item + .nav__item {
   margin-left: 20px;
 }
 
-.nav_link {
+.nav__link {
   position: relative;
   text-decoration: none;
   font-weight: 500;
@@ -48,11 +53,11 @@ body {
   display: block;
 }
 
-.nav_link:hover {
+.nav__link:hover {
   color: #00acdc;
 }
 
-.is-active::after {
+.nav__link--active::after {
   content: '';
   display: block;
   width: 37px;
@@ -64,7 +69,7 @@ body {
   bottom: 0;
 }
 
-.is-active {
+.nav__link--active {
   color: #00acdc;
 }
 
@@ -74,18 +79,8 @@ body {
 
 @import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body * {
-  box-sizing: border-box;
-  font-family: Roboto, sans-serif;
-}
-
 .catalog {
-  margin: 50px 40px 50px 40px;
+  margin: 50px 40px;
 
 
 .card {
@@ -97,10 +92,7 @@ body * {
   padding: 32px 16px;
   width: 200px;
   transition: transform 300ms;
-  
-  .card:hover {
-    transform: scale(20%);
-  }
+
 
   &__images {
     width: 160px;
@@ -202,12 +194,16 @@ body * {
 }
 }
 
+&:hover {
+    transform: scale(1.2);
+  }
+
+
 @media screen and (min-width: 488px) {
   .catalog {
     display: grid;
     grid-template-columns: repeat(2, 200px);
-    column-gap: 46px;
-    row-gap: 48px;
+    gap: 46px 48px;
   }
 }
 
@@ -215,8 +211,7 @@ body * {
   .catalog {
     display: grid;
     grid-template-columns: repeat(3, 200px);
-    column-gap: 46px;
-    row-gap: 48px;
+    gap: 46px 48px;
   }
 }
 
@@ -224,7 +219,6 @@ body * {
   .catalog {
     display: grid;
     grid-template-columns: repeat(4, 200px);
-    column-gap: 46px;
-    row-gap: 48px;
+    gap: 48px 46px;
   }
 }
