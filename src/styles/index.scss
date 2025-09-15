@@ -21,6 +21,8 @@ body * {
   align-items: center;
   justify-content: space-between;
   padding-right: 50px;
+  border-bottom: 1px solid #f2f2f2;
+  box-shadow: 0 2px 4px #0000000d;
 }
 
 .logo img {
@@ -76,10 +78,10 @@ body * {
 @import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
 
 .catalog {
+  display: grid;
   grid-template-columns: 1fr;
-  gap: 48px 46px;
   padding: 50px 40px;
-  display: inline-block;
+  gap: 48px 46px;
   justify-content: center;
   align-items: center;
 
@@ -96,10 +98,10 @@ body * {
   }
 }
 
+
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 32px 16px;
