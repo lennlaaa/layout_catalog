@@ -20,7 +20,7 @@ body * {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 50px;
+  padding-inline: 50px;
 
   box-shadow: 0 2px 4px #0000000d;
 }
@@ -28,7 +28,6 @@ body * {
 .logo img {
   width: 40px;
   height: 40px;
-  margin-left: 50px;
   display: block;
 }
 
@@ -37,7 +36,6 @@ body * {
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-left: 243px;
 }
 
 .nav__item + .nav__item {
@@ -63,8 +61,8 @@ body * {
 .is-active::after {
   content: '';
   display: block;
-  width: 37px;
   height: 4px;
+  width: 100%;
   border-radius: 8px;
   background-color: var(--blue);
   position: absolute;
