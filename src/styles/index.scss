@@ -15,6 +15,16 @@ body * {
   box-sizing: border-box;
 }
 
+$color-primary: #00acdc;
+$color-dark: #060b35;
+$color-title-hover: #34568b;
+$card-width: 200px;
+$gap-horizontal: 46px;
+$gap-vertical: 48px;
+$catalog-padding-vertical: 50px;
+$catalog-padding-horizontal: 40px;
+$transition-duration: transform 300ms;
+
 .header {
   background-color: #fff;
   display: flex;
@@ -55,7 +65,7 @@ body * {
 }
 
 .nav__link:hover {
-  color: #00acdc;
+  transition: $color-primary 300ms;
 }
 
 .is-active::after {
@@ -71,7 +81,7 @@ body * {
 }
 
 .is-active {
-  color: #00acdc;
+  color: $color-primary;
 }
 
 @import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
@@ -79,21 +89,21 @@ body * {
 .catalog {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 50px 40px;
-  gap: 46px 48px;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  gap: $gap-horizontal $gap-vertical;
   justify-content: center;
   align-items: center;
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, $card-width);
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, $card-width);
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, $card-width);
   }
 }
 
@@ -104,8 +114,8 @@ body * {
   border-radius: 5px;
   padding: 32px 16px;
   padding-bottom: 16px;
-  width: 200px;
-  transition: transform 300ms;
+  width: $card-width;
+  transition: $transition-duration;
 
   &__images {
     width: 160px;
@@ -121,10 +131,10 @@ body * {
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
-    color: #060b35;
+    color: $color-dark;
   }
   .card__title:hover {
-    color: #34568b;
+    color: $color-title-hover;
   }
 
   &__code {
@@ -182,7 +192,7 @@ body * {
       line-height: 18px;
     }
     .card__price-value {
-      color: #060b35;
+      color: $color-dark;
       font-weight: 700;
       font-size: 16px;
       line-height: 18px;
@@ -201,17 +211,27 @@ body * {
     box-sizing: border-box;
     display: block;
     width: 166px;
-    border: 1px solid #00acdc;
+    border: 1px solid $color-primary;
     color: #fff;
-    background-color: #00acdc;
+    background-color:$color-primary;
+    transition: $color-primary 300ms, #fff 300ms, $color-primary 300ms;
     &:hover {
-      border: 1px solid #00acdc;
-      color: #00acdc;
+      border: 1px solid $color-primary;
+      color: $color-primary;
       background-color: #fff;
     }
   }
 }
 
+
+.card:hover .card__title {
+  color: $color-title-hover;
+}
+
 .card:hover {
   transform: scale(1.2);
+}
+
+.card__title {
+  transition: $color-dark 300ms;
 }
