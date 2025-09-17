@@ -59,13 +59,14 @@ $transition-duration: transform 300ms;
   font-size: 12px;
   line-height: 60px;
   text-transform: uppercase;
-  color: var(--black);
+  color: $color-dark;
+  transition: color 30ms;
   align-items: center;
   display: block;
 }
 
 .nav__link:hover {
-  transition: $color-primary 300ms;
+  color: $color-primary;
 }
 
 .is-active::after {
@@ -88,9 +89,9 @@ $transition-duration: transform 300ms;
 
 .catalog {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: $card-width;
   padding: $catalog-padding-vertical $catalog-padding-horizontal;
-  gap: $gap-horizontal $gap-vertical;
+  gap: $gap-vertical $gap-horizontal;
   justify-content: center;
   align-items: center;
 
@@ -132,8 +133,10 @@ $transition-duration: transform 300ms;
     font-size: 12px;
     line-height: 18px;
     color: $color-dark;
+    transition: $color-dark 300ms;
   }
-  .card__title:hover {
+
+  .card:hover .card__title {
     color: $color-title-hover;
   }
 
@@ -213,8 +216,11 @@ $transition-duration: transform 300ms;
     width: 166px;
     border: 1px solid $color-primary;
     color: #fff;
-    background-color:$color-primary;
-    transition: $color-primary 300ms, #fff 300ms, $color-primary 300ms;
+    background-color: $color-primary;
+    transition:
+      $color-primary 300ms,
+      #fff 300ms,
+      $color-primary 300ms;
     &:hover {
       border: 1px solid $color-primary;
       color: $color-primary;
@@ -223,15 +229,6 @@ $transition-duration: transform 300ms;
   }
 }
 
-
-.card:hover .card__title {
-  color: $color-title-hover;
-}
-
 .card:hover {
   transform: scale(1.2);
-}
-
-.card__title {
-  transition: $color-dark 300ms;
 }
